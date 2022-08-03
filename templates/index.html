@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Price BMW Cars Prediction Application</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/static/images/0.jpg">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+
+  </head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+      <form action="/predict" method="POST" target="_blank" >
+            
+            <br>
+            <label for="exampleFormControlInput1" class="form-label"><b>What is the year of issue of the car?</b> </label>
+            <input type="text" class="form-control" id="year" name="year" placeholder="Enter year " required>
+            <br> 
+
+            <label for="exampleFormControlInput1" class="form-label"><b>How far did the car travel (in miles)?</b> </label>
+            <input type="text" class="form-control" id="mileage" name="mileage" placeholder="Enter distance" required>
+            <br> 
+
+
+            <label for="exampleFormControlInput1" class="form-label"><b>How much is the road tax for a car (£)?</b> </label>
+            <input type="text" class="form-control" id="tax" name="tax" placeholder="Enter tax" required>
+            <br> 
+
+
+
+            <label for="exampleFormControlInput1" class="form-label"><b>How many miles per galon of the car travel?</b> </label>
+            <input type="text" class="form-control" id="mpg" name="mpg" placeholder="Enter mpg" required>
+            <br> 
+
+            <label for="exampleFormControlInput1" class="form-label"><b>what is the engine Size of car (size in litres)?</b> </label>
+            <input type="text" class="form-control" id="engineSize" name="engineSize" placeholder="Enter number of engine Size" required>
+            <br> 
+   
+              <table>
+               
+                <b>What is the model of the car?</b>
+               <br>
+    
+                <input
+                  list="model"
+                  name="model"
+                  placeholder="Select Category"
+                  required
+                />
+                <datalist id="model">
+                  <option value="1 Series">1 Series</option>
+                  <option value="2 Series">2 Series</option>
+                  <option value="3 Series">3 Series</option>
+                  <option value="4 Series">4 Series</option>
+                  <option value="5 Series">5 Series</option>
+                  <option value="6 Series">6 Series</option>
+                  <option value="7 Series">7 Series</option>
+                  <option value="8 Series">8 Series</option>
+
+                  <option value="X1">X1</option>
+                  <option value="X2">X2</option>
+                  <option value="X3">X3</option>
+                  <option value="X4">X4</option>
+                  <option value="X5">X5</option>
+                  <option value="X6">X6</option>
+                  <option value="X7">X7</option>
+
+                  <option value="M2">M2</option>
+                  <option value="M3">M3</option>
+                  <option value="M4">M4</option>
+                  <option value="M5">M5</option>
+                  <option value="M6">M6</option>
+
+                  <option value="Z3">Z3</option>
+                  <option value="Z4">Z4</option>
+                  <option value="i3">i3</option>
+                  <option value="i8">i8</option>
+
+                </datalist>
+              </table>
+              <br />
+    
+              <table>
+               <b>What is the transmission of the car?</b>
+               <br>
+    
+                <input
+                  list="transmission"
+                  name="transmission"
+                  placeholder="Select Category"
+                  required
+                />
+                <datalist id="transmission">
+                  <option value="Manual">Manual</option>
+                  <option value="Automatic">Automatic</option>
+                  <option value="Semi-Auto">Semi-Auto</option>
+                </datalist>
+              </table>
+              <br />
+
+              <table>
+                <b>What is the type of fuel of the car?</b>
+                <br>
+                <input
+                  list="fuelType"
+                  name="fuelType"
+                  placeholder="Select Category"
+                  required
+                />
+                <datalist id="fuelType">
+                  <option value="Diesel">Diesel</option>
+                  <option value="Petrol">Petrol</option>
+                  <option value="Hybrid">Hybrid</option>
+                  <option value="Electric">Electric</option>
+                  <option value="Other">Other</option>
+
+                </datalist>
+              </table>
+              <br />
+
+
+
+              <input class="predict" style="
+                 text-align: center;
+                 width: 258px;
+                 border-radius: 30px;"
+                type="submit" value="Predict">
+
+            </form>
+
+        </div>
+       
+      </div>
+
+      
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style=" background-size: cover " 
+  
+  <div class="hero-container" data-aos="fade-in">
+    
+  </div>
+</section><!-- End Hero -->
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" >
+
+        <div class="section-title" >
+          <p><span class="typed" data-typed-items="BMW CARS ..." style="font-size: 30px ;"></span></p>
+          <p style="font-size: 25px;">
+             Did you know that machine learning models can help you predict many things with great accuracy&#128562; <br>
+             This is a web site to help customers to expect price(£) of BMW's cars..</p>
+             <br>
+             <p style="font-size: 25px;">
+              The pound (£) is the main unit of sterling, 
+              and the currency itself may be referred to by the compound noun pound sterling or the term British pound </p>
+        </div>
+
+        <div class="row" >
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="/static/images/0.jpg" class="img-fluid" alt="">
+
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <p class="fst-italic">
+             <p style="font-size: 25px;"> To expect the price of BMW car, simply follow the steps bellow: <br>
+              
+              
+                - Filling the data that describe the car &#9997. <br>
+                -  Press "Predict" and wait for the result &#128151;. <br>
+            </p>
+            </div>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/purecounter/purecounter.js"></script>
+  <script src="/static/vendor/aos/aos.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/vendor/typed.js/typed.min.js"></script>
+  <script src="/static/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

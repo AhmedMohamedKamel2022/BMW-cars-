@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="shortcut icon" href="/static/images/0.jpg">
+
+    <title>
+        Prediction Page 
+    </title>
+</head>
+
+<body class="pred" style="background-image: url('/static/images/pre.jpg');
+background-size: cover; background-repeat: no-repeat; font-size: 30px"> 
+    <h1 style="text-align: center; margin-top: 120px; margin-left: 150px;  color: black">Price BMW Car Prediction...</h1>
+    <h1 class="heart" style="text-align: center ;
+    
+
+    font-size: 40px; margin-left: 150px; color: white;">Price is :{{prediction}} £
+    </h1>
+
+   
+    <a href={{url_for('index')}}>
+        <button class="predict" type="button" style="border: 1px solid #999;
+        border-radius: 40px; 
+        width: 270px;
+        height: 80px;
+        font-size: 35px;
+        margin-left: 620px;  
+        margin-top: 4px; ">Return Back!</button>
+    </a>    
+</body>
